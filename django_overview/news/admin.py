@@ -1,3 +1,6 @@
 from django.contrib import admin
+from news.models import Reporter, Article
 
-# Register your models here.
+app_models = [Reporter, Article]
+
+admin.site.register(app_models)
