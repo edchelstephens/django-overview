@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Article | {{pk}} {% endblock title %}
+
+{% block content %}
+    <section class="article">
+        <h3>{{ article.headline }}</h3>
+        <p>{{ article.content }}</p>
+    </section>
+    <section class="article-info">
+        <p>- By: {{ article.reporter.full_name }}, 
+            <br/>
+            <i>{{ article.pub_date|date:"l, F d, Y"}}</i>
+        </p>
+    </section>
+{% endblock content %}

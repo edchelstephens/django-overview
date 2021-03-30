@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Monthly Articles | {{ year }} Month {{ month }} {% endblock title %}
+
+{% block content %}
+    <b>Articles for year:{{ year }}, month:{{ month }}</b>
+    {% for article in articles %}
+        <section class="article-section">
+            <h1>{{ article.headline }}</h1>
+            <p>{{ article.content }}</p>
+        </section>
+        <section class="article-info">
+            <p>- {{ article.reporter.full_name }} 
+                <br/> 
+                <i>{{ article.pub_date|date:"l, F j, Y"}}</i>
+        </p>
+        </section>
+    {% endfor %}
+{% endblock content %}
