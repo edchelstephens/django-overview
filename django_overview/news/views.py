@@ -4,6 +4,9 @@ from news.models import Article
 
 from utils.debug_utils import *
 
+def get_homepage(request):
+    return render(request, "base.html")
+
 def year_archive(request, year):
     """Render articles on a specified year."""
     articles = Article.objects.filter(pub_date__year=year)
